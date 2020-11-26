@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+package session;
 
+import entity.Journal;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,9 +15,9 @@ import javax.persistence.PersistenceContext;
  * @author user
  */
 @Stateless
-public class PersonFacade extends AbstractFacade<Person> {
+public class JournalFacade extends AbstractFacade<Journal> {
 
-    @PersistenceContext(unitName = "SPTVR19-Java-WebLibraryPU")
+    @PersistenceContext(unitName = "SPTVR19WebLibraryPU")
     private EntityManager em;
 
     @Override
@@ -24,8 +25,8 @@ public class PersonFacade extends AbstractFacade<Person> {
         return em;
     }
 
-    public PersonFacade() {
-        super(Person.class);
+    public JournalFacade() {
+        super(Journal.class);
     }
     
 }

@@ -8,6 +8,9 @@ package entity;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
@@ -15,9 +18,14 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Book implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     private String author;
     private String year;
+
+    public Book() {
+    }
 
     @Override
     public String toString() {

@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
@@ -19,6 +22,8 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Journal implements Serializable {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Person student;
         private Book subject;
         private Integer mark;
